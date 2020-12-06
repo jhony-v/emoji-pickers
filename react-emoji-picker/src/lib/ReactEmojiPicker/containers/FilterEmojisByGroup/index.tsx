@@ -2,7 +2,7 @@ import React from "react";
 import { EmojiGroups, EmojiGroupTypes } from "../../@types";
 import FlexWrapper from "../../components/PicketWrappers/FlexWrapper";
 import RowDivider from "../../components/RowDivider";
-import { useReactEmojiPickerContext } from "../../features/ReactEmojiPickerFeature/ReactEmojiPickerContext";
+import useFilterEmoji from "../../hooks/useFilterEmoji";
 import { ButtonGrayScaleIcon } from "./index.styles";
 
 const emojiCategories = ["😃","⚽️", "🐻", "🍔", "💡","👋","🛅","🚘"];
@@ -20,14 +20,14 @@ const emojiCategoriesWithKeys: EmojiKey[] = [...emojiCategories].map( (emoji, in
 );
 
 const FilterEmojisByGroup = () => {
-  const { emojiFilterSelected, setFilterEmoji } = useReactEmojiPickerContext();
+  const { emojiKey, setEmoji } = useFilterEmoji();
 
   return (
     <RowDivider to="bottom">
-      <FlexWrapper>
+      <FlexWrapper role="menu">
         {emojiCategoriesWithKeys.map(({ emoji, key }) => {
           return (
-            <ButtonGrayScaleIcon key={key} isDisabled={emojiFilterSelected !== key} onClick={() => setFilterEmoji(key)} >
+            <ButtonGrayScaleIcon key={key} isDisabled={emojiKey !== key} onClick={() => setEmoji(key)} >
               {emoji}
             </ButtonGrayScaleIcon>
           );

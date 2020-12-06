@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 import { EmojiData, EmojiGroupTypes } from "../@types";
+import getAsyncJsonEmojis from "../utils/getAsyncJsonEmojis";
 
-const getAsyncJsonEmojis = async (jsonName: EmojiGroupTypes): Promise<EmojiData> => {
-  const request = await import(`../data/emojiData/${jsonName}.json`);
-  return request.default;
-};
-
-
-const useFetchEmojisByGroup = (emojiFilterSelected : EmojiGroupTypes) => {
+/**
+ * Hook to get a emoji group by name
+ * @param emojiFilterSelected name of emoji group
+ */
+const useFetchEmojisByGroup = (emojiName : EmojiGroupTypes) => {
   const [{ emojiList }, setData] = useState<EmojiData>({ emojiGroup: 0, emojiList: [] });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
-    getAsyncJsonEmojis(emojiFilterSelected).then(request => {
+    getAsyncJsonEmojis(emojiName).then(request => {
       setData(request);
       setLoading(false);
     });
-  },[emojiFilterSelected]);
+  },[emojiName]);
 
   return {
       loading,

@@ -9,11 +9,18 @@ export const EmojiGroups = {
   TRAVEL_PLACES: "travelPlaces",
 } as const;
 
+export const EmojiTotalGroups = Object.keys(EmojiGroups).length;
+
 export type EmojiGroupTypes = typeof EmojiGroups[keyof typeof EmojiGroups];
 
-
-export interface EmojiListData {
+interface NameUnicode {
   unicode: string;
+}
+
+export interface RecentlyUsedEmoji extends NameUnicode {
+  tag: string;
+}
+export interface EmojiListData extends NameUnicode {
   tags: [string, string];
 }
 export interface EmojiData {
