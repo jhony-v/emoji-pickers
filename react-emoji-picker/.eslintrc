@@ -1,0 +1,8 @@
+{
+    "extends": ["react-app","prettier"],
+    "rules": {
+        "react/destructuring-assignment" : "warn",
+        "react/jsx-indent" : "error",
+        "block-spacing": "warn"
+    }
+}

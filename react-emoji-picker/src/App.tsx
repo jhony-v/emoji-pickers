@@ -3,7 +3,7 @@ import ReactEmojiPicker from "./lib/ReactEmojiPicker";
 
 function App() {
   return <div>
-    <ReactEmojiPicker  onSelected={e => console.log(e)}/>
+      <ReactEmojiPicker  onSelected={e => console.log(e)}/>
   </div>;
 }
 

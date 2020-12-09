@@ -14,16 +14,16 @@ const ListResultEmojis = () => {
   if(loading) return <SkeletonGridLoader repeat={10} />;
 
   return (
-    <div>
-      <RowDivider to="bottom">
-        <Spacing>
-          <TextWeightPrimaryH3>{emojiGroupName}</TextWeightPrimaryH3>
-        </Spacing>
-      </RowDivider>
-      <Spacing>
-        <RenderListEmojis data={emojiList} />
-      </Spacing>
-    </div>
+      <div>
+          <RowDivider to="bottom">
+              <Spacing>
+                  <TextWeightPrimaryH3>{emojiGroupName}</TextWeightPrimaryH3>
+              </Spacing>
+          </RowDivider>
+          <Spacing>
+              <RenderListEmojis data={emojiList} />
+          </Spacing>
+      </div>
   );
 };
 

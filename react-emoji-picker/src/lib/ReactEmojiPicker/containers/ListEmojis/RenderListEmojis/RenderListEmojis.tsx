@@ -11,13 +11,13 @@ const ListWrapperCategory = styled(FlexWrapper)`
 
 const RenderListEmojis: FC<{ data: EmojiData[] }> = ({ data }) => {
   return (
-    <ListWrapperCategory>
-      {data.map((emoji, index) => (
-        <IconButtonEmojiSelector key={index} emoji={emoji}>
-          {emoji.unicode}
-        </IconButtonEmojiSelector>
+      <ListWrapperCategory>
+          {data.map((emoji, index) => (
+              <IconButtonEmojiSelector key={index} emoji={emoji}>
+                  {emoji.unicode}
+              </IconButtonEmojiSelector>
       ))}
-    </ListWrapperCategory>
+      </ListWrapperCategory>
   );
 };
 

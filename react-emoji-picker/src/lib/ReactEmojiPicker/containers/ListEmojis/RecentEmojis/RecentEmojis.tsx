@@ -21,17 +21,17 @@ const RecentEmojis = () => {
   const { isset, recentEmojis, resetRecentEmojis } = useRecentEmojis();
   if (isset)
     return (
-      <RowDivider to="bottom">
-        <Spacing>
-          <HeaderWrapper>
-            <TextWeightPrimaryH3>Recent</TextWeightPrimaryH3>
-            <ResetText onClick={() => resetRecentEmojis()} role="button">
-              Clear
-            </ResetText>
-          </HeaderWrapper>
-          <RenderListEmojis data={recentEmojis} />
-        </Spacing>
-      </RowDivider>
+        <RowDivider to="bottom">
+            <Spacing>
+                <HeaderWrapper>
+                    <TextWeightPrimaryH3>Recent</TextWeightPrimaryH3>
+                    <ResetText onClick={() => resetRecentEmojis()} role="button">
+                        Clear
+                    </ResetText>
+                </HeaderWrapper>
+                <RenderListEmojis data={recentEmojis} />
+            </Spacing>
+        </RowDivider>
     );
   return null;
 };

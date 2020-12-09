@@ -31,12 +31,12 @@ type EmojiSearchInputProps = {
 
 const EmojiSearchInput: FC<EmojiSearchInputProps> = ({ placeholder, onSearch }) => {
   return (
-    <RowDivider to="bottom">
-      <WrapperInput>
-        <FiSearch size={20} color="gray" />
-        <SearchInput placeholder={placeholder} onKeyUp={onSearch} />
-      </WrapperInput>
-    </RowDivider>
+      <RowDivider to="bottom">
+          <WrapperInput>
+              <FiSearch size={20} color="gray" />
+              <SearchInput placeholder={placeholder} onKeyUp={onSearch} />
+          </WrapperInput>
+      </RowDivider>
   );
 };
 

@@ -7,7 +7,7 @@ import { ReactEmojiPickerContext } from "./ReactEmojiPickerContext";
 type ReactEmojiPickerProviderProps = {
   onSelected ?: (emoji : string) => void
 }
-const ReactEmojiPickerProvider: FC<ReactEmojiPickerProviderProps> = (props) => {
+const ReactEmojiPickerProvider: FC<ReactEmojiPickerProviderProps> = ({onSelected,children}) => {
   const [emojiFilterSelected, setFilterEmoji] = useState<EmojiGroupTypes>("smileysEmotion");
   const [emojiSelected, setEmoji] = useState<EmojiData>({
     unicode: "",
@@ -16,11 +16,11 @@ const ReactEmojiPickerProvider: FC<ReactEmojiPickerProviderProps> = (props) => {
   const [ recentEmojis, setRecentEmojis ] = useState<RecentlyUsedEmoji[]>(localStorageEmojis.get());
 
   useEffect(() => {
-    props.onSelected && props.onSelected(emojiSelected.unicode);
-  },[emojiSelected,props]);
+    onSelected && onSelected(emojiSelected.unicode);
+  },[emojiSelected,onSelected]);
 
   return (
-    <ReactEmojiPickerContext.Provider
+      <ReactEmojiPickerContext.Provider
       value={{
         emojiFilterSelected,
         setFilterEmoji,
@@ -30,8 +30,8 @@ const ReactEmojiPickerProvider: FC<ReactEmojiPickerProviderProps> = (props) => {
         setRecentEmojis
       }}
     >
-      {props.children}
-    </ReactEmojiPickerContext.Provider>
+          {children}
+      </ReactEmojiPickerContext.Provider>
   );
 };
 

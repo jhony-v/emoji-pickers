@@ -1,4 +1,4 @@
-import React, { FC, memo } from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { EmojiData } from "../../../@types";
 import useSelectStorageEmojis from "../../../hooks/useSelectStorageEmojis";
@@ -22,7 +22,7 @@ type IconButtonEmojiSelectorProps = {
 const IconButtonEmojiSelector = ({children,emoji} : IconButtonEmojiSelectorProps) => {
   const { selectEmoji } = useSelectStorageEmojis();
   return (
-    <IconWrapper onClick={() => selectEmoji(emoji)}>{children}</IconWrapper>
+      <IconWrapper onClick={() => selectEmoji(emoji)}>{children}</IconWrapper>
   );
 };
 
