@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { EmojiData, EmojiGroupTypes } from "../@types";
+import { EmojiListData, EmojiGroupTypes } from "../@types";
 import getAsyncJsonEmojis from "../utils/getAsyncJsonEmojis";
 
 /**
@@ -7,7 +7,7 @@ import getAsyncJsonEmojis from "../utils/getAsyncJsonEmojis";
  * @param emojiFilterSelected name of emoji group
  */
 const useFetchEmojisByGroup = (emojiName : EmojiGroupTypes) => {
-  const [{ emojiList }, setData] = useState<EmojiData>({ emojiGroup: 0, emojiList: [] });
+  const [{ emojiList }, setData] = useState<EmojiListData>({ emojiGroup: 0, emojiList: [] });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

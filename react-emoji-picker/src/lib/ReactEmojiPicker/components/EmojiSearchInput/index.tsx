@@ -26,7 +26,7 @@ const SearchInput = styled.input`
 
 type EmojiSearchInputProps = {
   placeholder?: string;
-  onSearch ?: (e : React.KeyboardEvent<HTMLInputElement>) => void
+  onSearch ?: (e : React.FormEvent<HTMLInputElement>) => void
 };
 
 const EmojiSearchInput: FC<EmojiSearchInputProps> = ({ placeholder, onSearch }) => {

@@ -13,17 +13,19 @@ export const EmojiTotalGroups = Object.keys(EmojiGroups).length;
 
 export type EmojiGroupTypes = typeof EmojiGroups[keyof typeof EmojiGroups];
 
-interface NameUnicode {
+export interface NameUnicode {
   unicode: string;
 }
 
 export interface RecentlyUsedEmoji extends NameUnicode {
-  tag: string;
+  tags: string[];
 }
-export interface EmojiListData extends NameUnicode {
-  tags: [string, string];
+
+export interface EmojiData extends NameUnicode {
+  tags: string[];
 }
-export interface EmojiData {
-  emojiList: EmojiListData[];
+
+export interface EmojiListData {
+  emojiList: EmojiData[];
   emojiGroup: number;
 }
