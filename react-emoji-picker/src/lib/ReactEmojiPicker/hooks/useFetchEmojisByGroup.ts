@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { EmojiListData, EmojiGroupTypes } from "../@types";
+import { EmojiGroupTypes } from "../@types";
+import { useReactEmojiPickerContext } from "../features/ReactEmojiPickerFeature/ReactEmojiPickerContext";
 import getAsyncJsonEmojis from "../utils/getAsyncJsonEmojis";
 
 /**
@@ -7,21 +8,21 @@ import getAsyncJsonEmojis from "../utils/getAsyncJsonEmojis";
  * @param emojiFilterSelected name of emoji group
  */
 const useFetchEmojisByGroup = (emojiName : EmojiGroupTypes) => {
-  const [{ emojiList }, setData] = useState<EmojiListData>({ emojiGroup: 0, emojiList: [] });
   const [loading, setLoading] = useState(true);
+  const { allEmojis, setAllEmojis } = useReactEmojiPickerContext();
 
   useEffect(() => {
     setLoading(true);
-    getAsyncJsonEmojis(emojiName).then(request => {
-      setData(request);
+    getAsyncJsonEmojis(emojiName).then(({emojiList}) => {
+      setAllEmojis(emojiList);
       setLoading(false);
     });
-  },[emojiName]);
+  },[emojiName,setAllEmojis]);
 
   return {
       loading,
-      emojiList,
-      emojiGroupName : emojiList[0]?.tags[0]
+      emojiList : allEmojis,
+      emojiGroupName : allEmojis[0]?.tags[0]
   };
 };
 

@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   display: flex;
   background-color: white;
   border-radius: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(100, 100, 100, 0.3);
   width: 290px;
   height: 420px;
   overflow: hidden;

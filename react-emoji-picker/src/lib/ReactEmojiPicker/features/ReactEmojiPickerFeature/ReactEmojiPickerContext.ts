@@ -1,22 +1,9 @@
 import { createContext, useContext } from "react";
-import { EmojiData, EmojiGroupTypes, RecentlyUsedEmoji } from "../../@types";
-
-export interface ReactEmojiPickerContextState {
-  emojiFilterSelected: EmojiGroupTypes;
-  emojiSelected: EmojiData;
-  recentEmojis: RecentlyUsedEmoji[];
-  setFilterEmoji: (emojiGroup: EmojiGroupTypes) => void;
-  setEmoji: (emoji: EmojiData) => void;
-  setRecentEmojis: (
-    recentEmojis:
-      | RecentlyUsedEmoji[]
-      | ((recentEmojis: RecentlyUsedEmoji[]) => RecentlyUsedEmoji[])
-  ) => void;
-}
+import { ReactEmojiPickerContextState } from "../../@types";
 
 export const ReactEmojiPickerContext = createContext<ReactEmojiPickerContextState | null>(
-  null
+   null
 );
 
 export const useReactEmojiPickerContext = () =>
-  useContext(ReactEmojiPickerContext) as ReactEmojiPickerContextState;
+   useContext(ReactEmojiPickerContext) as ReactEmojiPickerContextState;
