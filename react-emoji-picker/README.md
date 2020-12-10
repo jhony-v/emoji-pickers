@@ -7,3 +7,24 @@
 <p align="center">
     <img src="../emoji-picker.PNG" />
 </p>
+
+## :white_check_mark: Install packages
+```console
+> npm install
+```
+
+## :white_check_mark: Install packages
+```console
+> npm start
+```
+
+
+## :white_check_mark: Run your unit tests
+```console
+> npm run test
+```
+
+## :white_check_mark: Lints and fixes files
+```console
+> npm run eslint
+```

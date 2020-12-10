@@ -1,29 +1,38 @@
-# vue-emoji-picker
+<h1>
+    <p align="center">
+        Vue emoji picker <img  src="./vue-logo.png" width="33px" />
+    </p>
+</h1>
 
-## Project setup
-```
-npm install
-```
+<p align="center">
+    <img src="../emoji-picker.PNG" />
+</p>
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Run your unit tests
-```
-npm run test:unit
+## :white_check_mark: Install packages
+Install vue cli
+```console
+> npm install
 ```
 
-### Lints and fixes files
-```
-npm run lint
+Install project dependencies 
+```console
+> npm install
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## :white_check_mark: Install packages
+```console
+> npm run start
+```
+
+
+## :white_check_mark: Run your unit tests
+```console
+> npm run test:unit
+```
+
+## :white_check_mark: Lints and fixes files
+```console
+> npm run lint
+```
