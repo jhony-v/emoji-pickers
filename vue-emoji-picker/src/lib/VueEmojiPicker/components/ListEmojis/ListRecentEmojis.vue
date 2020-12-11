@@ -4,15 +4,23 @@
       <title-h-3>Recent</title-h-3>
       <span class="recent-emojis__text-clear"> Clear </span>
     </div>
+    <div class="recent-emojis__list"></div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, inject } from 'vue';
+import { VueEmojiPickerKeys } from '../../features/useEmojiPickerStore';
 import TitleH3 from '../../shared/TitleH3.vue';
 
 export default defineComponent({
   components: { TitleH3 },
+  setup() {
+    const recentEmojis = inject(VueEmojiPickerKeys.RecentEmojis);
+    return {
+      recentEmojis,
+    };
+  },
 });
 </script>
 

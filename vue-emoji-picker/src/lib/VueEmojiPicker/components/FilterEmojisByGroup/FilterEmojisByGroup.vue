@@ -1,14 +1,19 @@
 <template>
   <div class="filter-emoji" role="menu">
-    <div class="button-filter deactive" v-for="(item,key) in emojiCategoriesWithKeys" :key="key">
+    <div
+    v-for="(item,key) in emojiCategoriesWithKeys"
+    :key="key"
+    :class="['button-filter', emojiFilterSelected !== item.key ? 'deactive' : '']"
+    @click="updateEmojiFilterSelected(item.key)">
       {{item.emoji}}
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, inject } from 'vue';
 import { EmojiGroupTypes, EmojiGroups, emojiCategories } from '../../@types/index';
+import { VueEmojiPickerKeys } from '../../features/useEmojiPickerStore';
 
 interface EmojiKey {
    emoji: string;
@@ -20,11 +25,14 @@ const emojiCategoriesWithKeys: EmojiKey[] = [...emojiCategories].map((emoji, ind
 }));
 
 export default defineComponent({
-
   setup() {
-    console.log('filter');
+    const updateEmojiFilterSelected = inject(VueEmojiPickerKeys.UpdateEmojiFilterSelected);
+    const emojiFilterSelected = inject(VueEmojiPickerKeys.EmojiFilterSelected);
+
     return {
       emojiCategoriesWithKeys,
+      updateEmojiFilterSelected,
+      emojiFilterSelected,
     };
   },
 });

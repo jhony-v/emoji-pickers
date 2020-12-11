@@ -1,11 +1,21 @@
 <template>
-  <div></div>
+  <div class="all-emojis">
+    <div class="all-emojis__list"></div>
+  </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, inject } from 'vue';
+import { VueEmojiPickerKeys } from '../../features/useEmojiPickerStore';
 
-export default defineComponent({});
+export default defineComponent({
+  setup() {
+    const allEmojis = inject(VueEmojiPickerKeys.AllEmojis);
+    return {
+      allEmojis,
+    };
+  },
+});
 </script>
 
 <style lang="scss" scoped>

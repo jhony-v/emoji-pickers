@@ -11,6 +11,7 @@ import FilterEmojisByGroup from './components/FilterEmojisByGroup/FilterEmojisBy
 import ListEmojis from './components/ListEmojis/ListEmojis.vue';
 import SearchEmojis from './components/SearchEmojis/SearchEmojis.vue';
 import PopoverWrapper from './shared/PopoverWrapper.vue';
+import useEmojiPickerStore from './features/useEmojiPickerStore';
 
 export default {
   components: {
@@ -18,6 +19,9 @@ export default {
     PopoverWrapper,
     SearchEmojis,
     ListEmojis,
+  },
+  setup() {
+    useEmojiPickerStore();
   },
 };
 </script>

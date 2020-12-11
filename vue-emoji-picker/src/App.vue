@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <vue-emoji-picker></vue-emoji-picker>
-  </div>
+  <vue-emoji-picker></vue-emoji-picker>
 </template>
 
 <script lang="ts">

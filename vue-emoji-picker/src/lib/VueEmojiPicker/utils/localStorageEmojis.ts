@@ -1,7 +1,7 @@
-import { RecentlyUsedEmoji } from "../@types";
+import { RecentlyUsedEmoji } from '../@types';
 
-enum KEY_EMOJIS {
-  RECENT_EMOJIS = "recent-emojis",
+export enum KEY_EMOJIS {
+  RECENT_EMOJIS = 'recent-emojis',
 }
 
 export const localStorageEmojis = {
