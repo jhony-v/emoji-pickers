@@ -40,5 +40,9 @@ export default defineComponent({
     color: rgb(30, 130, 230);
     font-family: Arial, Helvetica, sans-serif;
   }
+  &__list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 }
 </style>

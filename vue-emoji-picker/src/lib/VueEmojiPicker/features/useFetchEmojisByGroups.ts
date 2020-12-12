@@ -20,6 +20,6 @@ export default function useFetchEmojisByGroups() {
   return {
     loading,
     emojiList: allEmojis,
-    emojiGroupName: allEmojis ? allEmojis[0]?.tags[0] : ''
+    emojiGroupName: allEmojis ? allEmojis[0]?.tags[0] : '',
   };
 }

@@ -1,10 +1,11 @@
 <template>
   <div class="filter-emoji" role="menu">
     <div
-    v-for="(item,key) in emojiCategoriesWithKeys"
-    :key="key"
-    :class="['button-filter', emojiFilterSelected !== item.key ? 'deactive' : '']"
-    @click="updateEmojiFilterSelected(item.key)">
+      v-for="(item,key) in emojiCategoriesWithKeys"
+      :key="key"
+      :class="['button-filter', emojiFilterSelected !== item.key ? 'deactive' : '']"
+      @click="updateEmojiFilterSelected(item.key)"
+    >
       {{item.emoji}}
     </div>
   </div>

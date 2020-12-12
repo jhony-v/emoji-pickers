@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactEmojiPicker from "./lib/ReactEmojiPicker";
 
 function App() {
+   const [ emoji , setEmoji ] = useState(""); 
    const onSelected = (e: string) => {
-      console.log(e);
+       setEmoji(e);
    };
    return (
        <div>
+           <h1>{emoji}</h1>
            <ReactEmojiPicker onSelected={onSelected} />
        </div>
    );

@@ -7,6 +7,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "bit:component": "npx bit add src/lib/ReactEmojiPicker --exclude _tests__",
+    "bit:compiler:component": "npx bit import bit.envs/compilers/react-typescript --compiler",
     "eslint": "eslint src",
     "eslint:fix": "eslint --fix src"
   },
@@ -57,10 +59,18 @@
     "@testing-library/user-event": "^12.1.10",
     "@types/jest": "^26.0.15",
     "@types/styled-components": "^5.1.4",
+    "bit-bin": "^14.8.8",
     "eslint-config-prettier": "^7.0.0",
     "husky": "^4.3.5",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.1"
+  },
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/react-typescript@3.1.61"
+    },
+    "componentsDefaultDirectory": "components/{name}",
+    "packageManager": "npm"
   }
 }
