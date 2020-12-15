@@ -1,5 +1,5 @@
 import React from "react";
-import { ListWrapper } from "./ListEmojis.styles";
+import { ListWrapper } from "./index.styles";
 import ListResultEmojis from "./ListResultEmojis/ListResultEmojis";
 import RecentEmojis from "./RecentEmojis/RecentEmojis";
 

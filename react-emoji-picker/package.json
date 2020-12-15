@@ -11,10 +11,11 @@
       "bit:compiler:component": "npx bit import bit.envs/compilers/react --compiler",
       "bit:build:component": "npx bit build",
       "bit:tag:component": "npx bit tag --all 1.0.0",
-      "bit:export:component": "npx bit export personal-dev.react-emoji-picker",
+      "bit:export:component": "npx bit export personal-dev.emoji-picker",
       "eslint": "eslint src",
       "eslint:fix": "eslint --fix src",
-      "generate-component": "npx tsc --build lib.tsconfig.json && copyfiles -a src/lib/ReactEmojiPicker/data lib/ReactEmojiPicker/data"
+      "generate-component": "npx tsc --build lib.tsconfig.json && copyfiles -a src/lib/ReactEmojiPicker/data lib/ReactEmojiPicker/data",
+      "bit:run": "npx bit init && yarn bit:add:component && yarn bit:tag:component && yarn bit:export:component"
    },
    "husky": {
       "hooks": {
@@ -27,9 +28,6 @@
       ]
    },
    "dependencies": {
-      "@types/node": "^12.0.0",
-      "@types/react": "^16.9.53",
-      "@types/react-dom": "^16.9.8",
       "react": "^17.0.1",
       "react-dom": "^17.0.1",
       "react-icons": "^4.1.0",
@@ -61,6 +59,9 @@
       "@testing-library/react-hooks": "^3.4.2",
       "@testing-library/user-event": "^12.1.10",
       "@types/jest": "^26.0.15",
+      "@types/node": "^12.0.0",
+      "@types/react": "^16.9.53",
+      "@types/react-dom": "^16.9.8",
       "@types/styled-components": "^5.1.4",
       "bit-bin": "^14.8.8",
       "copyfiles": "^2.4.1",
@@ -75,6 +76,16 @@
          "compiler": "bit.envs/compilers/react@1.0.21"
       },
       "componentsDefaultDirectory": "components/{name}",
-      "packageManager": "npm"
+      "packageManager": "npm",
+      "overrides": {
+         "*": {
+            "peerDependencies": {
+               "react": "+"
+            },
+            "dependencies": {
+               "react": "-"
+            }
+         }
+      }
    }
 }

@@ -6,8 +6,11 @@
         "dom.iterable",
         "esnext"
       ],
+      "types" : [ "node" ],
       "outDir": "lib/ReactEmojiPicker",
       "allowJs": true,
+      "declaration": true,
+      "noEmit": false,
       "skipLibCheck": true,
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
@@ -18,7 +21,6 @@
       "moduleResolution": "node",
       "resolveJsonModule": true,
       "isolatedModules": true,
-      "noEmit": false,
       "jsx": "react"
     },
     "include": [

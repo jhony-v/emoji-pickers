@@ -4,7 +4,7 @@ import FlexWrapper from "../../../components/PicketWrappers/FlexWrapper";
 import RowDivider from "../../../components/RowDivider";
 import { TextWeightPrimaryH3 } from "../../../components/TextLabels";
 import useRecentEmojis from "../../../hooks/useRecentEmojis";
-import { Spacing } from "../ListEmojis.styles";
+import { Spacing } from "../index.styles";
 import RenderListEmojis from "../RenderListEmojis/RenderListEmojis";
 
 const HeaderWrapper = styled(FlexWrapper)``;

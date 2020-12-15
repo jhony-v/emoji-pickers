@@ -5,7 +5,7 @@ import ListEmojis from "./containers/ListEmojis";
 import SearchEmojis from "./containers/SearchEmojis";
 import ReactEmojiPickerProvider from "./features/ReactEmojiPickerFeature/ReactEmojiPickerProvider";
 
-type ReactEmojiPickerProps = {
+export type ReactEmojiPickerProps = {
     onSelected?: (emoji: string) => void;
 };
 const ReactEmojiPicker = ({ onSelected }: ReactEmojiPickerProps) => {
