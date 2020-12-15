@@ -11,9 +11,10 @@
     <img src="./emoji-picker.PNG"  />
 </p>
 
-
 ## :white_check_mark: Description
 Emoji picker component to selected emojis and search by groups. This component is created to work with **ReactJs** and **VueJS**. 
+* **[REACT - DEMO](https://bit.dev/personal-dev/emoji-picker/react-emoji-picker)**
+* **[VUE - DEMO](https://bit.dev/personal-dev/emoji-picker/react-emoji-picker)**
 
 ## :white_check_mark: Features
 * Search emojis by tag name
