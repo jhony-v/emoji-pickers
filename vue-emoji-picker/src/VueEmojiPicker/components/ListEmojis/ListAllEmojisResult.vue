@@ -1,7 +1,7 @@
 <template>
   <div class="all-emojis">
     <div class="all-emojis__header">
-      <title-h-3>{{ emojiGroupName }} All</title-h-3>
+      <title-h-3>{{ emojiGroupName }}</title-h-3>
     </div>
     <div class="all-emojis__list">
         <button-emoji-selector  v-for="(item,key) in emojiList" :key="key">{{item.unicode}}</button-emoji-selector>

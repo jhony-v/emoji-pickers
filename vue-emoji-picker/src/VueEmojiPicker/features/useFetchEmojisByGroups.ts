@@ -5,6 +5,7 @@ import { VueEmojiPickerKeys } from './useEmojiPickerStore';
 
 export default function useFetchEmojisByGroups() {
   const loading = ref(true);
+  const emojiGroupName = ref("");
   const allEmojis = inject<EmojiData[]>(VueEmojiPickerKeys.AllEmojis);
   const updateAllEmojis = inject<(emojis: EmojiData[]) => void>(VueEmojiPickerKeys.UpdateAllEmojis)!;
   const emojiFilterSelected = inject<{ value: EmojiGroupTypes }>(VueEmojiPickerKeys.EmojiFilterSelected)!;
@@ -14,12 +15,13 @@ export default function useFetchEmojisByGroups() {
     getAsyncJsonEmojis(emojiFilterSelected.value).then(({ emojiList }) => {
       updateAllEmojis(emojiList);
       loading.value = false;
+      emojiGroupName.value = emojiList[0]?.tags[0];
     });
   });
 
   return {
     loading,
     emojiList: allEmojis,
-    emojiGroupName: allEmojis ? allEmojis[0]?.tags[0] : ''
+    emojiGroupName
   };
 }
