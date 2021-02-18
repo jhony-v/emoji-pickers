@@ -28,6 +28,12 @@ export default function useEmojiPickerStore() {
   const updateAllEmojis = (emojis: EmojiData[]) => {
     allEmojis.value = emojis;
   };
+  const updateEmojiSelected = (value : EmojiData) => {
+    emojiSelected.value = value;
+  }
+  const updateRecentEmojis = (value : RecentlyUsedEmoji[]) => {
+    recentEmojis.value = value;
+  }
 
   provide(VueEmojiPickerKeys.EmojiSelected, emojiSelected);
   provide(VueEmojiPickerKeys.EmojiFilterSelected, emojiFilterSelected);
@@ -35,4 +41,6 @@ export default function useEmojiPickerStore() {
   provide(VueEmojiPickerKeys.RecentEmojis, recentEmojis);
   provide(VueEmojiPickerKeys.UpdateEmojiFilterSelected, updateEmojiFilterSelected);
   provide(VueEmojiPickerKeys.UpdateAllEmojis, updateAllEmojis);
+  provide(VueEmojiPickerKeys.UpdateEmojiSelected,updateEmojiSelected);
+  provide(VueEmojiPickerKeys.UpdateRecentEmojis,updateRecentEmojis);
 }
