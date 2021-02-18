@@ -22,7 +22,6 @@ export default defineComponent({
     },
   },
   setup() {
-    console.log('ok');
   },
 });
 </script>

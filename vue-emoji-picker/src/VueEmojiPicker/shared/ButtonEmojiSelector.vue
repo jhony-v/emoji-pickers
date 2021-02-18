@@ -1,5 +1,5 @@
 <template>
-  <div class="emoji-button">
+  <div class="emoji-button" @click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -9,6 +9,11 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {},
+  methods: {
+    onClick() {
+      this.$emit("onPress");
+    }
+  }
 });
 </script>
 

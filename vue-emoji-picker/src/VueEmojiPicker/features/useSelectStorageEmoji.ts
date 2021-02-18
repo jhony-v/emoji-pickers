@@ -15,7 +15,7 @@ export default function useSelectStorageEmojis() {
       return !localStorageEmojis.get().some(emoji => emoji.unicode === emojiSelected.unicode);
   };
 
-  watch(() => recentEmojis,() => {
+  watch(recentEmojis!,() => {
     localStorageEmojis.add(recentEmojis?.value || []);
   });
 
