@@ -67,7 +67,7 @@ Once the dependencies are installed, yo run the next command according to the te
   <template>
     <div>
       <h1>{{emoji}}</h1>
-      <vue-emoji-picker @on-select="onSelectEmoji"></vue-emoji-picker>
+      <vue-emoji-picker @on-selected="onSelectedEmoji"></vue-emoji-picker>
     </div>
   </template>
   <script>
@@ -82,7 +82,7 @@ Once the dependencies are installed, yo run the next command according to the te
         };
       },
       methods: {
-        onSelectEmoji(emoji) {
+        onSelectedEmoji(emoji) {
           this.emoji = emoji;
         },
       },
