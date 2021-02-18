@@ -3,17 +3,20 @@
     <div class="all-emojis__header">
       <title-h-3>{{ emojiGroupName }} All</title-h-3>
     </div>
-    <div class="all-emojis__list"></div>
+    <div class="all-emojis__list">
+        <button-emoji-selector  v-for="(item,key) in emojiList" :key="key">{{item.unicode}}</button-emoji-selector>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
+import ButtonEmojiSelector from '@/VueEmojiPicker/shared/ButtonEmojiSelector.vue';
 import { defineComponent } from 'vue';
 import useFetchEmojisByGroups from '../../features/useFetchEmojisByGroups';
 import TitleH3 from '../../shared/TitleH3.vue';
 
 export default defineComponent({
-  components: { TitleH3 },
+  components: { TitleH3, ButtonEmojiSelector },
   setup() {
     const { loading, emojiList, emojiGroupName } = useFetchEmojisByGroups();
     return {
@@ -33,6 +36,7 @@ export default defineComponent({
   }
   &__list {
     padding: 10px;
+    display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
   }

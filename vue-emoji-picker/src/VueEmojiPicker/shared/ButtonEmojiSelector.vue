@@ -9,9 +9,6 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {},
-  setup() {
-    console.log('ok');
-  },
 });
 </script>
 
@@ -20,7 +17,7 @@ export default defineComponent({
   font-size: 1.2rem;
   text-align: center;
   padding: 5px;
-  width: 27px;
+  width: 26px;
   border-radius: 5px;
   cursor: pointer;
   &:hover {

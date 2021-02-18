@@ -7,11 +7,11 @@ export default function useFetchEmojisByGroups() {
   const loading = ref(true);
   const allEmojis = inject<EmojiData[]>(VueEmojiPickerKeys.AllEmojis);
   const updateAllEmojis = inject<(emojis: EmojiData[]) => void>(VueEmojiPickerKeys.UpdateAllEmojis)!;
-  const emojiFilterSelected = inject<EmojiGroupTypes>(VueEmojiPickerKeys.EmojiFilterSelected)!;
+  const emojiFilterSelected = inject<{ value: EmojiGroupTypes }>(VueEmojiPickerKeys.EmojiFilterSelected)!;
 
   watchEffect(() => {
     loading.value = true;
-    getAsyncJsonEmojis(emojiFilterSelected).then(({ emojiList }) => {
+    getAsyncJsonEmojis(emojiFilterSelected.value).then(({ emojiList }) => {
       updateAllEmojis(emojiList);
       loading.value = false;
     });
@@ -20,6 +20,6 @@ export default function useFetchEmojisByGroups() {
   return {
     loading,
     emojiList: allEmojis,
-    emojiGroupName: allEmojis ? allEmojis[0]?.tags[0] : '',
+    emojiGroupName: allEmojis ? allEmojis[0]?.tags[0] : ''
   };
 }
