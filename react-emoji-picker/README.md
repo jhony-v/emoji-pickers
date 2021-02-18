@@ -10,23 +10,46 @@
 
 **[VIEW DEMO](https://bit.dev/personal-dev/emoji-picker/react-emoji-picker)**
 
+Example:
+
+```javascript
+import React, { useState } from "react";
+import ReactEmojiPicker from "@bit/personal-dev.emoji-picker.react-emoji-picker";
+
+function App() {
+   const [emoji, setEmoji] = useState("");
+   return (
+      <div>
+         <h1>{emoji}</h1>
+         <ReactEmojiPicker onSelected={(currentEmoji) => {
+               setEmoji(currentEmoji);
+            }}
+         />
+      </div>
+   );
+}
+```
+
 ## :white_check_mark: Install packages
+
 ```console
 > npm install
 ```
 
 ## :white_check_mark: Install packages
+
 ```console
 > npm start
 ```
 
-
 ## :white_check_mark: Run your unit tests
+
 ```console
 > npm run test
 ```
 
 ## :white_check_mark: Lints and fixes files
+
 ```console
 > npm run eslint
 ```
