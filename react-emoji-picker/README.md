@@ -4,12 +4,11 @@
     </p>
 </h1>
 
-
-[VIEW COMPONENT](https://bit.dev/personal-dev/emoji-picker/react-emoji-picker)
-
 <p align="center">
     <img src="../emoji-picker.PNG" />
 </p>
+
+**[VIEW DEMO](https://bit.dev/personal-dev/emoji-picker/react-emoji-picker)**
 
 ## :white_check_mark: Install packages
 ```console
