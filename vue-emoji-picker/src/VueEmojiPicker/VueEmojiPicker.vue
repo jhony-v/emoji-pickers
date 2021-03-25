@@ -12,6 +12,7 @@ import ListEmojis from './components/ListEmojis/ListEmojis.vue';
 import SearchEmojis from './components/SearchEmojis/SearchEmojis.vue';
 import PopoverWrapper from './shared/PopoverWrapper.vue';
 import useEmojiPickerStore from './features/useEmojiPickerStore';
+import { watch } from "vue";
 
 export default {
   components: {
@@ -20,8 +21,13 @@ export default {
     SearchEmojis,
     ListEmojis,
   },
-  setup() {
-    useEmojiPickerStore();
+  emmits : ['onSelected'],
+
+  setup(props,context) {
+    const { emojiSelected } = useEmojiPickerStore();
+    watch(emojiSelected, (emojiSelectedValue) => {
+      context.emit("onSelected",emojiSelectedValue.unicode);
+    })
   },
 };
 </script>

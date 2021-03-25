@@ -35,6 +35,8 @@ export default function useEmojiPickerStore() {
     recentEmojis.value = value;
   }
 
+
+
   provide(VueEmojiPickerKeys.EmojiSelected, emojiSelected);
   provide(VueEmojiPickerKeys.EmojiFilterSelected, emojiFilterSelected);
   provide(VueEmojiPickerKeys.AllEmojis, allEmojis);
@@ -43,4 +45,8 @@ export default function useEmojiPickerStore() {
   provide(VueEmojiPickerKeys.UpdateAllEmojis, updateAllEmojis);
   provide(VueEmojiPickerKeys.UpdateEmojiSelected,updateEmojiSelected);
   provide(VueEmojiPickerKeys.UpdateRecentEmojis,updateRecentEmojis);
+
+  return {
+    emojiSelected
+  }
 }
