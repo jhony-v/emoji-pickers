@@ -12,6 +12,8 @@
 
 Example:
 
+Using Vue 2
+
 ```html
 <template>
   <div>
@@ -39,12 +41,45 @@ Example:
 </script>
 ```
 
+Using vue 3
+
+```html
+<template>
+  <div>
+    <h1>{{emoji}}</h1>
+    <vue-emoji-picker @on-selected="onSelectedEmoji"></vue-emoji-picker>
+  </div>
+</template>
+<script>
+  import { defineComponent, ref } from "vue";
+  import VueEmojiPicker from '@bit/personal-dev.emoji-picker.vue-emoji-picker';
+  export default defineComponent({
+    components: {
+      VueEmojiPicker
+    },
+    setup() {
+      const emoji = ref("");
+      const onSelectedEmoji = (currentEmoji) => {
+        emoji.value = currentEmoji;
+      }
+      
+      return {
+        emoji,
+        onSelectedEmoji
+      }
+    }
+  });
+</script>
+```
+
+
 ## :white_check_mark: Install packages
+
 
 Install vue cli
 
 ```console
-> npm install
+> npm install @vue/cli
 ```
 
 Install project dependencies
@@ -53,7 +88,7 @@ Install project dependencies
 > npm install
 ```
 
-## :white_check_mark: Install packages
+## :white_check_mark: Show demo in local server
 
 ```console
 > npm run start
@@ -69,4 +104,8 @@ Install project dependencies
 
 ```console
 > npm run lint
+```
+
+```console
+> npm run lint:fix
 ```

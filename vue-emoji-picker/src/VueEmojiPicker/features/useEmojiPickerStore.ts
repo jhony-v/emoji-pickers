@@ -35,8 +35,6 @@ export default function useEmojiPickerStore() {
     recentEmojis.value = value;
   }
 
-
-
   provide(VueEmojiPickerKeys.EmojiSelected, emojiSelected);
   provide(VueEmojiPickerKeys.EmojiFilterSelected, emojiFilterSelected);
   provide(VueEmojiPickerKeys.AllEmojis, allEmojis);

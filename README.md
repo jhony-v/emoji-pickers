@@ -58,10 +58,12 @@ Once the dependencies are installed, yo run the next command according to the te
 - **VueJS:**
 
   ```console
-  > npm run serve
+  > npm start
   ```
 
   Example:
+
+  Using Vue 2
 
   ```html
   <template>
@@ -87,5 +89,36 @@ Once the dependencies are installed, yo run the next command according to the te
         },
       },
     };
+  </script>
+  ```
+
+  Using Vue 3
+  
+  ```html
+  <template>
+    <div>
+      <h1>{{emoji}}</h1>
+      <vue-emoji-picker @on-selected="onSelectedEmoji"></vue-emoji-picker>
+    </div>
+  </template>
+  <script>
+    import { defineComponent, ref } from "vue";
+    import VueEmojiPicker from '@bit/personal-dev.emoji-picker.vue-emoji-picker';
+    export default defineComponent({
+      components: {
+        VueEmojiPicker
+      },
+      setup() {
+        const emoji = ref("");
+        const onSelectedEmoji = (currentEmoji) => {
+          emoji.value = currentEmoji;
+        }
+        
+        return {
+          emoji,
+          onSelectedEmoji
+        }
+      }
+    });
   </script>
   ```
