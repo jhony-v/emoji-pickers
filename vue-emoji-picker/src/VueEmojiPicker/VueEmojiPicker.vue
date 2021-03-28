@@ -12,7 +12,7 @@ import ListEmojis from './components/ListEmojis/ListEmojis.vue';
 import SearchEmojis from './components/SearchEmojis/SearchEmojis.vue';
 import PopoverWrapper from './shared/PopoverWrapper.vue';
 import useEmojiPickerStore from './features/useEmojiPickerStore';
-import { watch } from "vue";
+import { EmitsOptions, SetupContext, watch } from "vue";
 
 export default {
   components: {
@@ -22,8 +22,7 @@ export default {
     ListEmojis,
   },
   emmits : ['onSelected'],
-
-  setup(props,context) {
+  setup(props : {},context : SetupContext<EmitsOptions>) {
     const { emojiSelected } = useEmojiPickerStore();
     watch(emojiSelected, (emojiSelectedValue) => {
       context.emit("onSelected",emojiSelectedValue.unicode);

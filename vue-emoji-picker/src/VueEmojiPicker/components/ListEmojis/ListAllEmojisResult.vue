@@ -5,7 +5,7 @@
     </div>
     <div class="all-emojis__list">
       <button-emoji-selector
-        v-for="(item, key) in emojiList" :key="key" @onPress="onSelectEmoji(item)">
+        v-for="(item, key) in emojiList" :key="key" @onPress="selectEmoji(item)">
         {{ item.unicode }}
         </button-emoji-selector>
     </div>
@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts">
-import { EmojiData } from '@/VueEmojiPicker/@types';
 import ButtonEmojiSelector from '@/VueEmojiPicker/shared/ButtonEmojiSelector.vue';
 import { defineComponent } from 'vue';
 import useFetchEmojisByGroups from '../../features/useFetchEmojisByGroups';
@@ -26,15 +25,11 @@ export default defineComponent({
     const { loading, emojiList, emojiGroupName } = useFetchEmojisByGroups();
     const { selectEmoji } = useSelectStorageEmoji();
 
-    const onSelectEmoji = (e: EmojiData) => {
-      selectEmoji(e);
-    };
-
     return {
       emojiList,
       loading,
       emojiGroupName,
-      onSelectEmoji,
+      selectEmoji,
     };
   },
 });

@@ -11,10 +11,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-interface EmojiSearchProps {
-  placeholder?: string;
-}
-
 export default defineComponent({
   props: {
     placeholder: {
